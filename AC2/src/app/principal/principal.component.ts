@@ -8,8 +8,8 @@ import { UsuarioService } from '../usuario.service';
 })
 export class PrincipalComponent implements OnInit {
   usuarios: any[] = [];
-  usuariosFiltrados: any[] = []; // Lista de usuários filtrados
-  filtroNome: string = ''; // Propriedade para armazenar o termo de pesquisa
+  usuariosFiltrados: any[] = [];
+  filtroNome: string = '';
 
   constructor(private usuarioService: UsuarioService) {}
 
@@ -21,7 +21,7 @@ export class PrincipalComponent implements OnInit {
     this.usuarioService.getUsuarios().subscribe(
       (data) => {
         this.usuarios = data;
-        this.usuariosFiltrados = data; // Inicialmente, todos os usuários são exibidos
+        this.usuariosFiltrados = data;
       },
       (error) => {
         console.error('Erro ao carregar usuários:', error);
@@ -35,7 +35,7 @@ export class PrincipalComponent implements OnInit {
         usuario.nome.toLowerCase().includes(this.filtroNome.toLowerCase())
       );
     } else {
-      this.usuariosFiltrados = this.usuarios; // Exibe todos os usuários se o filtro estiver vazio
+      this.usuariosFiltrados = this.usuarios;
     }
   }
 }
