@@ -1,0 +1,31 @@
+<div class="usuarios-container">
+  <h2>Lista de Usuários</h2>
+  
+  <!-- Caixa de texto e botão para filtrar usuários -->
+  <div class="filtro">
+    <input
+      type="text"
+      [(ngModel)]="filtroNome"
+      placeholder="Filtrar por nome"
+      class="input-field"
+    />
+    <button (click)="filtrarUsuarios()">Filtrar</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuariosFiltrados">
+        <td>{{ usuario.id }}</td>
+        <td>{{ usuario.nome }}</td>
+        <td>{{ usuario.email }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
