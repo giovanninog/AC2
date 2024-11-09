@@ -5,7 +5,7 @@ import { PrincipalComponent } from './principal/principal.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'principal', component: PrincipalComponent },
+  { path: 'tela-principal', component: PrincipalComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
 
